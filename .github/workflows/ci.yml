@@ -73,8 +73,8 @@ jobs:
           tags: |
             ghcr.io/moskinen/todo-app-frontend:latest
             ghcr.io/moskinen/todo-app-frontend:${{ github.sha }}
-            
- deploy:
+  
+  deploy:   # <- 2 spaces, aligned with other jobs
     needs: [build-and-push-image, build-and-push-frontend]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
